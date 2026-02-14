@@ -1,16 +1,24 @@
-# React + Vite
+# Counsel – Therapy & Counseling Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Counsel is a modern, responsive frontend web application built to represent a professional therapy and counseling service. The platform focuses on accessibility, clarity, and calm user experience, making it easy for clients to learn about services, book sessions, and get in touch.
 
-Currently, two official plugins are available:
+##  Live Demo
+👉 https://counseli.netlify.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
+- Fully responsive design (mobile, tablet, desktop)
+- Modern hero sections with clear call-to-actions
+- Services overview (Individual, Couple, Group & Online Therapy)
+- About section with brand story and mission
+- CEO message section for trust and credibility
+- Contact & online booking form
+- Embedded Google Map showing Mwembe Tayari, Mombasa
+- Clean and calming UI suitable for a mental health platform
 
-## React Compiler
+##  Tech Stack
+- **React** – component-based UI
+- **Tailwind CSS** – utility-first styling
+- **Vite** – fast development and build tooling
+- **Netlify** – deployment and hosting
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
