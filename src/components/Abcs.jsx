@@ -1,14 +1,32 @@
 import React from "react";
+import { motion } from "framer-motion";
 import about from "../assets/about1.jpg";
 import team from "../assets/h1.jpg";
 
 const Abcs = () => {
+  
+  const leftVariant = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const rightVariant = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
   return (
     <section className="my-5 px-4 sm:px-8 md:px-16 lg:px-24">
       <div className="flex flex-col sm:flex-row gap-10 items-center">
         
-        
-        <div className="w-full sm:w-1/2">
+    
+        <motion.div
+          className="w-full sm:w-1/2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={leftVariant}
+        >
           <h1 className="text-3xl font-semibold mb-6 text-gray-700">
             Who We Are
           </h1>
@@ -24,10 +42,16 @@ const Abcs = () => {
             alt="our therapy team"
             className="w-full h-[180px] object-cover rounded-lg"
           />
-        </div>
+        </motion.div>
 
-
-        <div className="w-full sm:w-1/2">
+    
+        <motion.div
+          className="w-full sm:w-1/2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={rightVariant}
+        >
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">
             A Safe Space for Healing & Growth
           </h2>
@@ -52,7 +76,7 @@ const Abcs = () => {
             clarity, and develop healthier ways of coping so you can live a more
             balanced and fulfilling life.
           </p>
-        </div>
+        </motion.div>
 
       </div>
     </section>

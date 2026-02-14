@@ -1,13 +1,32 @@
-import React from 'react';
-import img1 from '../assets/h2.jpg';
-import img2 from '../assets/h1.jpg';
+import React from "react";
+import { motion } from "framer-motion";
+import img1 from "../assets/h2.jpg";
+import img2 from "../assets/h1.jpg";
 
 const Ab = () => {
+  // Motion variants
+  const textVariant = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  };
+
+  const imgVariant = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
   return (
     <div className="my-10 px-4 md:px-16">
       <div className="flex flex-col sm:flex-row gap-12 sm:gap-20 items-center">
 
-        <div className="w-full sm:w-1/2 space-y-6">
+        {/* TEXT */}
+        <motion.div
+          className="w-full sm:w-1/2 space-y-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={textVariant}
+        >
           <h1 className="text-4xl font-bold text-gray-800">Lola Therapy</h1>
           <h2 className="text-2xl font-semibold text-orange-500">About Us</h2>
           <p className="text-gray-700 text-lg leading-relaxed">
@@ -29,23 +48,31 @@ const Ab = () => {
             and discover the tools to thrive in all aspects of life. Join us at Lola Therapy and 
             experience a journey of transformation and self-discovery.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="w-full sm:w-1/2 flex flex-col gap-6 relative sm:pl-6">
-        
-          <img 
-            src={img1} 
-            alt="Therapy session" 
+        {/* IMAGES */}
+        <motion.div
+          className="w-full sm:w-1/2 flex flex-col gap-6 relative sm:pl-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={imgVariant}
+        >
+          <motion.img
+            src={img1}
+            alt="Therapy session"
             className="w-full rounded-xl shadow-lg object-cover h-64 sm:h-72"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
           />
-
-
-          <img 
-            src={img2} 
-            alt="Relaxing environment" 
+          <motion.img
+            src={img2}
+            alt="Relaxing environment"
             className="w-5/6 rounded-xl shadow-lg object-cover h-64 sm:h-72 sm:-ml-8"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
           />
-        </div>
+        </motion.div>
 
       </div>
     </div>
